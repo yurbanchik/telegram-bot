@@ -3,13 +3,13 @@ import os
 from telebot import types
 
 bot = telebot.TeleBot(os.environ.get("TOKEN"))
-file_id_1 = os.environ.get("file_id_1")
-file_id_2 = os.environ.get("file_id_2")
-file_id_3 = os.environ.get("file_id_3")
-file_id_4 = os.environ.get("file_id_4")
-file_id_5 = os.environ.get("file_id_5")
-file_id_6 = os.environ.get("file_id_6")
-file_id_7 = os.environ.get("file_id_7")
+file_id_1 = "BAACAgIAAxkBAAEuYuxnC37xkwwZkHpL9RBHTMdIt8iFuQAC-lcAAsCnWUhgfcOWHoOg2TYE"
+file_id_2 = "BAACAgIAAxkBAAEuYu5nC38AAUD0N_K7zwNPk0UhLdydh_wAAv5XAALAp1lImQrxAqXcUVQ2BA"
+file_id_3 = "BAACAgIAAxkBAAEuYvBnC38T-Px73d51s481715Rz1uTFQAC_1cAAsCnWUjUI0lmJxzyuzYE"
+file_id_4 = "BAACAgIAAxkBAAEuYvJnC38pE4xoox3ww0-AoO2DUlp8GgACAVgAAsCnWUhDE95z8yZRlTYE"
+file_id_5 = "BAACAgIAAxkBAAEuYvRnC383BXrSc1eMHk-O09xdrifqFwACA1gAAsCnWUiPg4eT98CaYzYE"
+file_id_6 = "BAACAgIAAxkBAAEuYvZnC39FDWJmWqyi9BLBw8ERTMGCOwACBlgAAsCnWUgPqmRAgsbyEDYE"
+file_id_7 = "BAACAgIAAxkBAAEuYvhnC39Ut_kDnwVFEl4KJ5-efaHVjgACB1gAAsCnWUgPaSTtEQ56QTYE"
 
 @bot.message_handler(commands=['start'])
 def start(message):
