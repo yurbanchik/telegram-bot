@@ -3,13 +3,13 @@ import os
 from telebot import types
 
 bot = telebot.TeleBot(os.environ.get("TOKEN"))
-file_id_1 = "BAACAgIAAxkBAAEuXjxnCjca6XbEv7yGr6HTsmz0orBtpgACUVMAAsCnUUg0yuLHotJExzYE"
-file_id_2 = "BAACAgIAAxkBAAEuYuZnC3zeX6tJzPQeeicPD5VoiNHDzAAC4FcAAsCnWUjcA1H90r4X-TYE"
-file_id_3 = "BAACAgIAAxkBAAEuXkBnCjgJ_Qrth--F4X0SFj3gBqIXzAACWlMAAsCnUUjM5PJX5gMgSjYE"
-file_id_4 = "BAACAgIAAxkBAAEuXkZnCjjAy6739EafPxffcY28VeKzCwACYlMAAsCnUUgT0vT0iR3oETYE"
-file_id_5 = "BAACAgIAAxkBAAEuXkxnCjloo7xmnMJbc139_Qf2TlK8WwACZ1MAAsCnUUgqtCSfVCBV9jYE"
-file_id_6 = "BAACAgIAAxkBAAEuXlNnCjoPPT6b_ZEVu-kZ87uv7ne5NwACblMAAsCnUUg-m-h_RadsJjYE"
-file_id_7 = "BAACAgIAAxkBAAEuXlZnCjpOiiGa0NWS4cVvO5-LjIqNFQACcVMAAsCnUUj7QN_V7tMPMTYE"
+file_id_1 = os.environ.get("file_id_1")
+file_id_2 = os.environ.get("file_id_2")
+file_id_3 = os.environ.get("file_id_3")
+file_id_4 = os.environ.get("file_id_4")
+file_id_5 = os.environ.get("file_id_5")
+file_id_6 = os.environ.get("file_id_6")
+file_id_7 = os.environ.get("file_id_7")
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -154,15 +154,14 @@ def callback_message(callback):
                          reply_markup=markup)
 
     elif callback.data == 'feedback':
-        btn1 = types.InlineKeyboardButton('Оставить отзыв', url='https://forms.yandex.ru/u/66f2daa3d04688166975cf21')
-        markup.add(btn1)
+        btn = types.InlineKeyboardButton('Оставить отзыв', url='https://forms.yandex.ru/u/66f2daa3d04688166975cf21')
+        markup.add(btn)
 
         bot.send_message(callback.message.chat.id,
                          'Отлично! Оставь свой отзыв и пожелания, чтоб я могла улучшить курс, это очень важно для меня! В подарок я предложу тебе бонус😉',
                          reply_markup=markup)
 
     elif callback.data == 'show-info':
-
         btn1 = types.InlineKeyboardButton('Подписаться на канал', url='https://t.me/butakovatochkisoznaniya')
         btn2 = types.InlineKeyboardButton('Подписаться на аккаунт', url='https://www.instagram.com/butakova.ts?igsh=MTRqYTc0NTlpeTU1cA==')
         btn3 = types.InlineKeyboardButton('Вернуться к урокам', callback_data='begin')
