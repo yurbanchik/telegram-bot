@@ -4,7 +4,7 @@ from telebot import types
 
 bot = telebot.TeleBot(os.environ.get("TOKEN"))
 file_id_1 = "BAACAgIAAxkBAAEuXjxnCjca6XbEv7yGr6HTsmz0orBtpgACUVMAAsCnUUg0yuLHotJExzYE"
-file_id_2 = "BAACAgIAAxkBAAEuXj5nCjdPz0iMWOHP1cwaHQEMmolTDQACVFMAAsCnUUjuzeIxhMMeQDYE"
+file_id_2 = "BAACAgIAAxkBAAEuYuZnC3zeX6tJzPQeeicPD5VoiNHDzAAC4FcAAsCnWUjcA1H90r4X-TYE"
 file_id_3 = "BAACAgIAAxkBAAEuXkBnCjgJ_Qrth--F4X0SFj3gBqIXzAACWlMAAsCnUUjM5PJX5gMgSjYE"
 file_id_4 = "BAACAgIAAxkBAAEuXkZnCjjAy6739EafPxffcY28VeKzCwACYlMAAsCnUUgT0vT0iR3oETYE"
 file_id_5 = "BAACAgIAAxkBAAEuXkxnCjloo7xmnMJbc139_Qf2TlK8WwACZ1MAAsCnUUgqtCSfVCBV9jYE"
