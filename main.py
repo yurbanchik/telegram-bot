@@ -3,6 +3,13 @@ import os
 from telebot import types
 
 bot = telebot.TeleBot(os.environ.get("TOKEN"))
+file_id_1 = "BAACAgIAAxkBAAEuXjxnCjca6XbEv7yGr6HTsmz0orBtpgACUVMAAsCnUUg0yuLHotJExzYE"
+file_id_2 = "BAACAgIAAxkBAAEuXj5nCjdPz0iMWOHP1cwaHQEMmolTDQACVFMAAsCnUUjuzeIxhMMeQDYE"
+file_id_3 = "BAACAgIAAxkBAAEuXkBnCjgJ_Qrth--F4X0SFj3gBqIXzAACWlMAAsCnUUjM5PJX5gMgSjYE"
+file_id_4 = "BAACAgIAAxkBAAEuXkZnCjjAy6739EafPxffcY28VeKzCwACYlMAAsCnUUgT0vT0iR3oETYE"
+file_id_5 = "BAACAgIAAxkBAAEuXkxnCjloo7xmnMJbc139_Qf2TlK8WwACZ1MAAsCnUUgqtCSfVCBV9jYE"
+file_id_6 = "BAACAgIAAxkBAAEuXlNnCjoPPT6b_ZEVu-kZ87uv7ne5NwACblMAAsCnUUg-m-h_RadsJjYE"
+file_id_7 = "BAACAgIAAxkBAAEuXlZnCjpOiiGa0NWS4cVvO5-LjIqNFQACcVMAAsCnUUj7QN_V7tMPMTYE"
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -18,17 +25,14 @@ def callback_message(callback):
     markup = types.InlineKeyboardMarkup()
 
     if callback.data == 'introductory-video':
-        file_id = 'BAACAgIAAxkBAAEuXjxnCjca6XbEv7yGr6HTsmz0orBtpgACUVMAAsCnUUg0yuLHotJExzYE'
-
         btn = types.InlineKeyboardButton('Я посмотрел', callback_data='watch-first-video')
         markup.add(btn)
 
         bot.send_message(callback.message.chat.id,
                          '▶Для вас готовы 5 уроков с теорией и бонусный урок с практикой. Начнем!⬇')
-        bot.send_video(callback.message.chat.id, file_id, reply_markup=markup)
+        bot.send_video(callback.message.chat.id, file_id_1, reply_markup=markup)
 
     elif callback.data == 'watch-first-video':
-
         btn = types.InlineKeyboardButton('Перейти к следующему уроку', callback_data='first-video')
         markup.add(btn)
 
@@ -37,17 +41,14 @@ def callback_message(callback):
                          reply_markup=markup)
 
     elif callback.data == 'first-video':
-        file_id = 'BAACAgIAAxkBAAEuXj5nCjdPz0iMWOHP1cwaHQEMmolTDQACVFMAAsCnUUjuzeIxhMMeQDYE'
-
         btn = types.InlineKeyboardButton('Я посмотрел', callback_data='watch-second-video')
         markup.add(btn)
 
         bot.send_message(callback.message.chat.id,
                          '✏Теперь мы перейдем к Уроку 1. Вы узнаете, откуда получаете деньги и куда тратите, и выберете проекты, по которым будете вести учет.')
-        bot.send_video(callback.message.chat.id, file_id, reply_markup=markup)
+        bot.send_video(callback.message.chat.id, file_id_2, reply_markup=markup)
 
     elif callback.data == 'watch-second-video':
-
         btn = types.InlineKeyboardButton('Перейти к следующему уроку', callback_data='second-video')
         markup.add(btn)
 
@@ -56,17 +57,14 @@ def callback_message(callback):
                          reply_markup=markup)
 
     elif callback.data == 'second-video':
-        file_id = 'BAACAgIAAxkBAAEuXkBnCjgJ_Qrth--F4X0SFj3gBqIXzAACWlMAAsCnUUjM5PJX5gMgSjYE'
-
         btn = types.InlineKeyboardButton('Я посмотрел', callback_data='watch-third-video')
         markup.add(btn)
 
         bot.send_message(callback.message.chat.id,
                          '✏Теперь мы перейдем к Уроку 2, где разберем ведомости поступлений и платежей.')
-        bot.send_video(callback.message.chat.id, file_id, reply_markup=markup)
+        bot.send_video(callback.message.chat.id, file_id_3, reply_markup=markup)
 
     elif callback.data == 'watch-third-video':
-
         btn = types.InlineKeyboardButton('Перейти к следующему уроку', callback_data='third-video')
         markup.add(btn)
 
@@ -75,17 +73,14 @@ def callback_message(callback):
                          reply_markup=markup)
 
     elif callback.data == 'third-video':
-        file_id = 'BAACAgIAAxkBAAEuXkZnCjjAy6739EafPxffcY28VeKzCwACYlMAAsCnUUgT0vT0iR3oETYE'
-
         btn = types.InlineKeyboardButton('Я посмотрел', callback_data='watch-forth-video')
         markup.add(btn)
 
         bot.send_message(callback.message.chat.id,
                          '✏Теперь мы перейдем к Уроку 3, где поймете, сколько вы реально получили денег в месяц и сколько вы потратили.')
-        bot.send_video(callback.message.chat.id, file_id, reply_markup=markup)
+        bot.send_video(callback.message.chat.id, file_id_4, reply_markup=markup)
 
     elif callback.data == 'watch-forth-video':
-
         btn = types.InlineKeyboardButton('Перейти к следующему уроку', callback_data='forth-video')
         markup.add(btn)
 
@@ -94,17 +89,14 @@ def callback_message(callback):
                          reply_markup=markup)
 
     elif callback.data == 'forth-video':
-        file_id = 'BAACAgIAAxkBAAEuXkxnCjloo7xmnMJbc139_Qf2TlK8WwACZ1MAAsCnUUgqtCSfVCBV9jYE'
-
         btn = types.InlineKeyboardButton('Я посмотрел', callback_data='watch-fifth-video')
         markup.add(btn)
 
         bot.send_message(callback.message.chat.id,
                          '✏Теперь мы перейдем к Уроку 4, где вы узнаете, сколько вы реально заработали в этом месяце.')
-        bot.send_video(callback.message.chat.id, file_id, reply_markup=markup)
+        bot.send_video(callback.message.chat.id, file_id_5, reply_markup=markup)
 
     elif callback.data == 'watch-fifth-video':
-
         btn = types.InlineKeyboardButton('Перейти к следующему уроку', callback_data='fifth-video')
         markup.add(btn)
 
@@ -113,17 +105,14 @@ def callback_message(callback):
                          reply_markup=markup)
 
     elif callback.data == 'fifth-video':
-        file_id = 'BAACAgIAAxkBAAEuXlNnCjoPPT6b_ZEVu-kZ87uv7ne5NwACblMAAsCnUUg-m-h_RadsJjYE'
-
         btn = types.InlineKeyboardButton('Я посмотрел', callback_data='watch-last-video')
         markup.add(btn)
 
         bot.send_message(callback.message.chat.id,
                          '✏Теперь мы перейдем к завершающему уроку и увидим результат работы.')
-        bot.send_video(callback.message.chat.id, file_id, reply_markup=markup)
+        bot.send_video(callback.message.chat.id, file_id_6, reply_markup=markup)
 
     elif callback.data == 'watch-last-video':
-
         btn1 = types.InlineKeyboardButton('Получить шаблон для заполнения', url='https://docs.google.com/spreadsheets/d/1bRH70a33U8rBZ9gGLFMztwqwkmIx1EqrOiWgRe5r9oQ/edit?usp=sharing')
         btn2 = types.InlineKeyboardButton('Получить пример заполнения', url='https://docs.google.com/spreadsheets/d/1QCJWJlJNf_8FF8nDAd4E5w4QrPS8Yiy0Hv1-560xStY/edit?usp=sharing')
         btn3 = types.InlineKeyboardButton('Перейти к следующему уроку', callback_data='last-video')
@@ -136,18 +125,15 @@ def callback_message(callback):
                          reply_markup=markup)
 
     elif callback.data == 'last-video':
-        file_id = 'BAACAgIAAxkBAAEuXlZnCjpOiiGa0NWS4cVvO5-LjIqNFQACcVMAAsCnUUj7QN_V7tMPMTYE'
-
         btn = types.InlineKeyboardButton('Я посмотрел', callback_data='congratulation')
         markup.add(btn)
 
         bot.send_message(callback.message.chat.id,
                          '✏Вы отлично справились с предыдущими уроками! Теперь давай перейдем к заключительному уроку.')
-        bot.send_video(callback.message.chat.id, file_id, reply_markup=markup)
+        bot.send_video(callback.message.chat.id, file_id_7, reply_markup=markup)
 
 
     elif callback.data == 'congratulation':
-
         btn = types.InlineKeyboardButton('Продолжить', callback_data='main')
         markup.add(btn)
 
