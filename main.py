@@ -1,8 +1,8 @@
 import telebot
-# import os
+import os
 from telebot import types
 
-bot = telebot.TeleBot("7985324847:AAFk_CWPZTbdnp0yz-n2KXphG9c7sFADJc0")
+bot = telebot.TeleBot(os.environ.get("TOKEN"))
 file_id_1 = "BAACAgIAAxkBAAEuZ-VnDLimYxWsa4klOCTWQiN_J746AQACv18AAntyYEilBHU_QeuKYTYE"
 file_id_2 = "BAACAgIAAxkBAAEuZ_1nDLn2kM_BgPfW9r0-1CFAkKPi1gACyV8AAntyYEh_mYnSAdeg_TYE"
 file_id_3 = "BAACAgIAAxkBAAEuZ_9nDLoLQbzN72ppG57Yq2Ou4FyMuAACzF8AAntyYEjc96YkPu6MZzYE"
