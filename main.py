@@ -3,22 +3,13 @@ import os
 from telebot import types
 
 bot = telebot.TeleBot(os.environ.get("TOKEN"))
-file_id_1 = "BAACAgIAAxkBAAEubz9nDjuPH5UFeTL_Z2RTVC6wZeQ_LAACc1oAAp0tcUiKBHuF-vlwuzYE"
-file_id_2 = "BAACAgIAAxkBAAEub0FnDjud5o6WjKXBrqd8boo86aIkawACdVoAAp0tcUhGIiWOZrop4TYE"
-file_id_3 = "BAACAgIAAxkBAAEub0NnDjuqLaM7es-T6-awoW5Akq4UCQACd1oAAp0tcUjlarMDay6jTzYE"
-file_id_4 = "BAACAgIAAxkBAAEub0VnDju4GKLV5n_o2_LQYuN5qkt66AACeVoAAp0tcUgklQuQLeAL1jYE"
-file_id_5 = "BAACAgIAAxkBAAEub0dnDjvFRaS1QjUkzhh6S7KTm3-K8wACeloAAp0tcUi33nKoEgeBEDYE"
-file_id_6 = "BAACAgIAAxkBAAEub0lnDjvTcDitkaYCZB7zC6zcPQMc9QACfVoAAp0tcUi1QDPlaNinfzYE"
-file_id_7 = "BAACAgIAAxkBAAEub0tnDjvhXGLQk3ssP0sxtG_WJl8yxgACfloAAp0tcUiwWxl3XOSO4DYE"
-
-@bot.message_handler(commands=['start'])
-def start(message):
-    markup = types.InlineKeyboardMarkup()
-    btn1 = types.InlineKeyboardButton('Продолжить', callback_data='introductory-video')
-    btn2 = types.InlineKeyboardButton('Позже', callback_data='show-info')
-    markup.row(btn1, btn2)
-
-    bot.send_message(message.chat.id, '📌Добро пожаловать на мини-курс “Управленка за 2 часа” от консалтинговой компании “Масштаб”!', reply_markup=markup)
+file_id_1 = "BAACAgIAAxkBAAEudHtnD2SLmtfQYLB0u0eKgtPWv4WrtgACV1gAAqRJeUibtYs9yQZF-DYE"
+file_id_2 = "BAACAgIAAxkBAAEudOxnD3L8E7E7IUYcmyXmpOg_ZIUgTQACWVgAAqRJeUjuHkKSxK868TYE"
+file_id_3 = "BAACAgIAAxkBAAEudO5nD3MKI6GqCfz-IkB6H6_TmL1qmAACXFgAAqRJeUg-BMfJTm1uXjYE"
+file_id_4 = "BAACAgIAAxkBAAEudPhnD3NqzPjEfAd40XdfBpdZkx0rTwACXlgAAqRJeUhnIir5J9WjMjYE"
+file_id_5 = "BAACAgIAAxkBAAEudPJnD3MoonA_bX1IUMhFApbgPfwPMgACYVgAAqRJeUgZ-ZZzRKllVjYE"
+file_id_6 = "BAACAgIAAxkBAAEudPZnD3NMQj1ZYMdCr4yjRcDSJiSM8wACalgAAqRJeUi0HUuEs7xsOTYE"
+file_id_7 = "BAACAgIAAxkBAAEudPxnD3OFmOcl4NeU_VXJ1sEdcLscgwACcFgAAqRJeUg8qm8qB5uFVjYE"
 
 @bot.callback_query_handler(func=lambda callback: True)
 def callback_message(callback):
@@ -174,5 +165,14 @@ def callback_message(callback):
         btn = types.InlineKeyboardButton('Начать', callback_data='introductory-video')
         markup.add(btn)
         bot.send_message(callback.message.chat.id,f'{callback.message.chat.first_name}, рада вас снова видеть😊! Готовы погрузиться в мир финансового анализа? Начнем с вводного урока!⬇', reply_markup=markup)
+
+@bot.message_handler(commands=['start'])
+def start(message):
+    markup = types.InlineKeyboardMarkup()
+    btn1 = types.InlineKeyboardButton('Продолжить', callback_data='introductory-video')
+    btn2 = types.InlineKeyboardButton('Позже', callback_data='show-info')
+    markup.row(btn1, btn2)
+
+    bot.send_message(message.chat.id, '📌Добро пожаловать на мини-курс “Управленка за 2 часа” от консалтинговой компании “Масштаб”!', reply_markup=markup)
 
 bot.polling(none_stop=True)
